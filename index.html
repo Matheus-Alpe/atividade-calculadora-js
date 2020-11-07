@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-size: 40px;
+        }
+        body {
+            background: #242526;
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        div {
+            margin: 1em;
+        }
+
+    </style>
+</head>
+
+<body>
+    <form batata>
+        <div>
+            <label for="v1">primeiro valor:</label>
+            <input type="number" name="v1" id="v1" step="any">
+        </div>
+        <div>
+            <label for="v2">segundo valor:</label>
+            <input type="number" name="v2" id="v2" step="any">
+        </div>
+
+        <button value="+">Somar (+)</button>
+        <button value="-">Subtrair (-)</button>
+        <button value="*">Multiplicar (*)</button>
+        <button value="/">Dividir (/)</button>
+
+        <div>
+            <label for="resultado">Resultado:</label>
+            <input type="text" id="resultado" disabled>
+        </div>
+    </form>
+
+    <script>
+        const inputResultado = document.getElementById("resultado");
+
+        document.querySelectorAll('button').forEach((elemento) => {
+            elemento.addEventListener("click", function (e) {
+
+                e.preventDefault();
+
+                const v1 = Number(document.getElementById("v1").value);
+                const v2 = Number(document.getElementById("v2").value);
+
+                const resultado = resultadoOperacao(v1, elemento.value, v2);
+
+                inputResultado.value = resultado;
+            })
+        })
+
+
+        function resultadoOperacao(v1, operacao, v2) {
+
+            switch (operacao) {
+                case "+":
+                    return v1 + v2;
+                    break;
+                case "-":
+                    return v1 - v2;
+                    break;
+                case "*":
+                    return v1 * v2;
+                    break;
+                case "/":
+                    return v1 / v2;
+                    break;
+            }
+        }
+    </script>
+</body>
+
+</html>
