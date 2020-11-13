@@ -6,9 +6,7 @@ document.querySelectorAll('button').forEach((elemento) => {
         const v1 = Number(document.getElementById("v1").value);
         const v2 = Number(document.getElementById("v2").value);
 
-        const resultado = resultadoOperacao(v1, elemento.value, v2);
-
-        inputResultado.value = resultado;
+        inputResultado.value = resultadoOperacao(v1, elemento.value, v2);
     })
 })
 
