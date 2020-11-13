@@ -1,9 +1,7 @@
 const inputResultado = document.getElementById("resultado");
 
 document.querySelectorAll('button').forEach((elemento) => {
-    elemento.addEventListener("click", function (e) {
-
-        e.preventDefault();
+    elemento.addEventListener("click", function () {
 
         const v1 = Number(document.getElementById("v1").value);
         const v2 = Number(document.getElementById("v2").value);
